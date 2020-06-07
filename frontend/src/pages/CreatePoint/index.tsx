@@ -25,8 +25,6 @@ interface IBGECityResonse {
   nome: string;
 }
 
-const history = useHistory();
-
 const CreatePoint = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [ufs, setUfs] = useState<IBGEResonse[]>([]);
@@ -45,6 +43,8 @@ const CreatePoint = () => {
     email: '',
     whatsapp: '',
   });
+
+  const history = useHistory();
 
   useEffect(() => {
     api.get('items').then((response) => {
@@ -256,7 +256,6 @@ const CreatePoint = () => {
                 <span>{item.title}</span>
               </li>
             ))}
-            ;
           </ul>
         </fieldset>
 
